@@ -206,13 +206,6 @@ def update_a_user(user_id: UUID = Path(
                 last_name=str(user_new["last_name"]),
                 birth_date=str(user_new["birth_date"]))
 
-
-
-
-###################################################################
-
-
-
 ## Tweets
 
 ### Show all Tweets
@@ -309,7 +302,7 @@ def delete_tweet(tweet_id: UUID = Path(
                 ...,
                 title="Tweet UUID",
                 description="This is the Tweet UUID",
-                example="3fa85f64-5717-4562-b3fc-2c963f66afa8")):
+                example="3fa85f64-5717-4562-b3fc-2c963f66afa6")):
     with open("tweets.json", "r", encoding="utf-8") as f:
         results = json.loads(f.read())
         results_with_tweet_deleted = [tweet for tweet in results if tweet["tweet_id"] != str(tweet_id) ]
@@ -334,7 +327,7 @@ def update_tweet(tweet_id: UUID = Path(
                 ...,
                 title="Tweet UUID",
                 description="This is the Tweet UUID",
-                example="3fa85f64-5717-4562-b3fc-2c963f66afa8"),
+                example="3fa85f64-5717-4562-b3fc-2c963f66afa6"),
                 tweet: Tweet = Body(...)):
 
     with open("tweets.json", "r", encoding="utf-8") as f:
